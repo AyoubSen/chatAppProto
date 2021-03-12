@@ -18,7 +18,7 @@ const Message = forwardRef(({message,username},ref)=> {
         marginBottom="10px" 
         marginLeft={[isUser ?"auto":"0", isUser? "auto":"0px", isUser? "auto":"0",isUser? "auto":"0"]}
         marginRight={[isUser ?"0":"0", isUser? "0":"0", isUser? "0":"0",isUser? "0":"0"]}
-        bg={isUser ? "#3f83f8" : "lightgray"} 
+        bg={isUser ? "#3f83f8" : "darkgray"} 
         color="white" 
         fontWeight="bold">
             <p>{message.username}:  {message.message}</p>
