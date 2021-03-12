@@ -9,6 +9,8 @@ import {
   FormControl,
   InputGroup,
   InputRightAddon,
+  Image,
+  Center,
 } from "@chakra-ui/react";
 import { Box, Flex, Button } from "@chakra-ui/react";
 function App() {
@@ -51,6 +53,13 @@ function App() {
   return (
     <Box className='App'>
       <Box marginTop='30px'>
+        <Center marginBottom='20px'>
+          <Image
+            src='https://assets.stickpng.com/images/580b57fcd9996e24bc43c526.png'
+            alt='messenger logo'
+            w={["50px", "50px", "80px", "80px"]}
+          />
+        </Center>
         <h1>Welcome {user} ! </h1>
       </Box>
 
