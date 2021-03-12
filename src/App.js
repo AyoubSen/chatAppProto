@@ -18,8 +18,6 @@ function App() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 
-  console.log(input);
-
   const sendMessages = (event) => {
     event.preventDefault();
     db.collection("messages").add({
@@ -50,6 +48,11 @@ function App() {
   if (user === "") {
     setUser("Anonymous");
   }
+
+  if (user.length > 10) {
+    window.location.reload();
+  }
+
   return (
     <Box className='App'>
       <Box marginTop='30px'>
