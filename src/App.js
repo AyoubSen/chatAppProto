@@ -76,7 +76,11 @@ function App() {
               />
               <InputRightAddon
                 children={
-                  <Button type='submit' onClick={sendMessages}>
+                  <Button
+                    disabled={!input}
+                    type='submit'
+                    onClick={sendMessages}
+                  >
                     Send
                   </Button>
                 }
