@@ -9,11 +9,8 @@ import {
   FormControl,
   InputGroup,
   InputRightAddon,
-  Button,
-  Breadcrumb,
 } from "@chakra-ui/react";
-import { Box, Grid, Flex } from "@chakra-ui/react";
-import { IconButton } from "@chakra-ui/react";
+import { Box, Flex, Button } from "@chakra-ui/react";
 function App() {
   const [user, setUser] = useState("");
   const [input, setInput] = useState("");
@@ -48,7 +45,7 @@ function App() {
     setUser(prompt("What's your name? "));
   }, []);
 
-  if (user == "") {
+  if (user === "") {
     setUser("Anonymous");
   }
   return (

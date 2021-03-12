@@ -1,5 +1,5 @@
 import React, {forwardRef} from 'react'
-import {Box,Center,Flex} from "@chakra-ui/react";
+import {Box,Flex} from "@chakra-ui/react";
 
 const Message = forwardRef(({message,username},ref)=> {
 
