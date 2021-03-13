@@ -3,6 +3,20 @@ import {Box,Flex} from "@chakra-ui/react";
 
 const Message = forwardRef(({message,username},ref)=> {
 
+    function isURL(input) {
+        const pattern = new RegExp(
+          "^(https?:\\/\\/)?" + // protocol
+            "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+            "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+            "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+            "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+            "(\\#[-a-z\\d_]*)?$",
+          "i"
+        ); // fragment locator
+        return !!pattern.test(input);
+      }
+
+      
     const isUser = username === message.username;
     return (
         <Box padding={["0 20px","0 20px","0 100px","0 200px"]}>
@@ -21,7 +35,8 @@ const Message = forwardRef(({message,username},ref)=> {
         bg={isUser ? "#3f83f8" : "darkgray"} 
         color="white" 
         fontWeight="bold">
-            <p>{message.username}:  {message.message}</p>
+            {isURL(message.message)?<p>{message.username}: <a href={message.message}>{message.message}</a></p>:<p>{message.username}:  {(message.message)}</p>}
+            
         </Flex>
         </Box>
 
