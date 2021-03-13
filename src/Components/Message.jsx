@@ -35,8 +35,8 @@ const Message = forwardRef(({message,username},ref)=> {
         bg={isUser ? "#3f83f8" : "darkgray"} 
         color="white" 
         fontWeight="bold">
-            {isURL(message.message)?<p>{message.username}: <a href={message.message}>{message.message}</a></p>:<p>{message.username}:  {(message.message)}</p>}
             
+            <p>{message.username}:  {(message.message)}</p>
         </Flex>
         </Box>
 
