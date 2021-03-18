@@ -16,7 +16,22 @@ const Message = forwardRef(({message,username},ref)=> {
         return !!pattern.test(input);
       }
 
-      
+      function containshttp(input){
+
+        if(input.startsWith("http:/")){
+            return true;
+        }
+            
+        else if ((input.startsWith("https:/"))){
+
+            return true;
+        }
+        else return false;
+
+            
+      }
+    
+      console.log(containshttp(message.message));
     const isUser = username === message.username;
     return (
         <Box padding={["0 20px","0 20px","0 100px","0 200px"]}>
@@ -36,7 +51,7 @@ const Message = forwardRef(({message,username},ref)=> {
         color="white" 
         fontWeight="bold">
             
-            <p>{message.username}:  {(message.message)}</p>
+            {isURL(message.message)? <p>{message.username}: <a href={containshttp(message.message)?(message.message):("http://"+message.message)}>{message.message}</a></p> : <p>{message.username}: {message.message}</p>}
         </Flex>
         </Box>
 
